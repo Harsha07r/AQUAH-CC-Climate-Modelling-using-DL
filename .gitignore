@@ -1,0 +1,4 @@
+# Environment variables (contain secrets - never commit)
+.env
+.env.*
+!.env.example
