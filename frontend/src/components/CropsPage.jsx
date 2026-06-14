@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Leaf, Activity, Droplets, ChevronDown, ChevronUp, Award } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 const RATING_CONFIG = {
   Excellent: { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-600', bar: 'bg-emerald-500', text: 'text-emerald-700' },
@@ -95,7 +96,7 @@ export default function CropsPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/report')
+    fetch(`${API_BASE_URL}/api/report`)
       .then((res) => {
         if (!res.ok) throw new Error(`Status ${res.status}`);
         return res.json();

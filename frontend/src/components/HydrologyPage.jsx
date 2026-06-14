@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Droplets, Thermometer, Wind, MapPin } from 'lucide-react';
 import HydrologyDashboard from './HydrologyDashboard';
+import { API_BASE_URL } from '../config';
 
 const RISK_CONFIG = {
   HIGH:     { bg: 'bg-red-50',    border: 'border-red-200',    text: 'text-red-600',    dot: 'bg-red-500'    },
@@ -14,7 +15,7 @@ export default function HydrologyPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/api/report')
+    fetch(`${API_BASE_URL}/api/report`)
       .then((res) => {
         if (!res.ok) throw new Error(`Status ${res.status}`);
         return res.json();

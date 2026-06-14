@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { MessageSquare, Paperclip, Camera, Mic, Send, Activity, Leaf } from 'lucide-react';
 import { translations } from '../translations';
 import HydrologyDashboard from './HydrologyDashboard';
+import { API_BASE_URL } from '../config';
 
 export default function ChatInterface({ user, currentLanguage, setCurrentLanguage }) {
   // --- 1. STATE MANAGEMENT ---
@@ -88,7 +89,7 @@ export default function ChatInterface({ user, currentLanguage, setCurrentLanguag
 
     if (savedSession) {
       setSessionId(savedSession);
-      fetch(`http://127.0.0.1:5000/api/chat/${savedSession}`)
+      fetch(`${API_BASE_URL}/api/chat/${savedSession}`)
         .then((res) => res.json())
         .then((data) => {
           if (data.messages && data.messages.length > 0) {
@@ -130,7 +131,7 @@ export default function ChatInterface({ user, currentLanguage, setCurrentLanguag
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:5000/api/chat', {
+      const response = await fetch(`${API_BASE_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

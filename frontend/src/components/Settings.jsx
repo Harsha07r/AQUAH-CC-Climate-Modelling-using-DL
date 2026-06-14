@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Save, Map, Leaf, Droplets } from 'lucide-react';
 import { auth } from "../firebase";
 import { translations } from '../translations';
+import { API_BASE_URL } from '../config';
 
 export default function Settings({ currentLanguage = 'en-IN' }) {
   const t = (key) => translations[currentLanguage]?.[key] || translations['en-IN'][key];
@@ -23,7 +24,7 @@ export default function Settings({ currentLanguage = 'en-IN' }) {
 
     try {
       // Send the data to your new Node.js /api/user route
-      const response = await fetch("http://localhost:5000/api/user", {
+      const response = await fetch(`${API_BASE_URL}/api/user`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
