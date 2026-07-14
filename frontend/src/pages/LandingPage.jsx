@@ -6,7 +6,7 @@ import {
 import {
   MessageSquare, Droplet, Leaf, Mic, Send, Activity, Award,
   ChevronRight, Brain, Globe, Zap, GitBranch,
-  Play, BarChart2, Clock, Shield,
+  BarChart2, Clock, Shield,
 } from 'lucide-react';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -779,17 +779,31 @@ export default function LandingPage({ onGetStarted }) {
       <section id="demo" className="lp-section">
         <div className="lp-container">
           <InView>
-            <EyebrowLabel>Demo</EyebrowLabel>
-            <h2 className="lp-section-title">See AQUAH-CC in action</h2>
-            <p className="lp-section-body" style={{ maxWidth: 500 }}>A 60-second walkthrough of the AI assistant, hydrology dashboard, and crop advisory in action.</p>
+            <EyebrowLabel>Live App</EyebrowLabel>
+            <h2 className="lp-section-title">Try it yourself</h2>
+            <p className="lp-section-body" style={{ maxWidth: 500 }}>
+              AQUAH-CC is fully deployed. Sign in with Google and explore the AI assistant, hydrology forecast, and crop advisory — no setup required.
+            </p>
           </InView>
           <InView delay={0.1}>
-            <div className="lp-demo-card">
-              <div className="lp-demo-inner">
-                <div className="lp-demo-play">
-                  <Play size={28} color="white" fill="white" />
+            <div className="lp-demo-card" style={{ cursor: 'default' }}>
+              <div className="lp-demo-inner" style={{ gap: 28, padding: '0 24px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16, width: '100%', maxWidth: 720 }}>
+                  {[
+                    { emoji: '💬', title: 'AI Assistant', body: 'Ask crop questions in English or Hindi using voice or text.' },
+                    { emoji: '🌊', title: 'Hydrology Tab', body: '6-day Jhelum river discharge forecast with flood risk level.' },
+                    { emoji: '🌾', title: 'Crop Advisory', body: 'Season-wise rankings scored against your soil profile.' },
+                  ].map(f => (
+                    <div key={f.title} style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 14, padding: '20px 18px', textAlign: 'left', backdropFilter: 'blur(8px)' }}>
+                      <div style={{ fontSize: 26, marginBottom: 10 }}>{f.emoji}</div>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: '#fff', marginBottom: 6 }}>{f.title}</div>
+                      <div style={{ fontSize: 12.5, color: 'rgba(167,212,184,0.8)', lineHeight: 1.6 }}>{f.body}</div>
+                    </div>
+                  ))}
                 </div>
-                <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13, marginTop: 16 }}>Product walkthrough · 60 seconds</p>
+                <button onClick={onGetStarted} className="lp-cta-btn lp-cta-btn--hero" style={{ marginTop: 8 }}>
+                  Open the App <ChevronRight size={16} />
+                </button>
               </div>
               <div className="lp-demo-overlay" />
             </div>
@@ -948,9 +962,7 @@ export default function LandingPage({ onGetStarted }) {
         /* Demo */
         .lp-demo-card { position: relative; height: 340px; border-radius: 20px; overflow: hidden; background: linear-gradient(135deg, #0f3d24, #0d1f14); border: 1px solid rgba(255,255,255,0.08); margin-top: 40px; cursor: pointer; }
         .lp-demo-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-        .lp-demo-play { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); transition: all 0.25s; }
-        .lp-demo-card:hover .lp-demo-play { background: rgba(255,255,255,0.25); transform: scale(1.08); }
-        .lp-demo-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(34,197,94,0.12) 0%, transparent 70%); }
+.lp-demo-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(34,197,94,0.12) 0%, transparent 70%); }
 
         /* CTA section */
         .lp-cta-section { background: linear-gradient(140deg, #0f3d24, #0d1f14); padding: 96px 24px; text-align: center; }
