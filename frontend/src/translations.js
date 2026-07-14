@@ -1,8 +1,8 @@
 // src/translations.js
+
 export const translations = {
   "en-IN": {
     appTitle: "AQUAH Assistant",
-    welcomeMessage: "Hello! I am the AQUAH-CC assistant. How are your field conditions looking today?",
     placeholder: "Which crop should I grow this season?",
     listening: "Listening...",
     clickToSpeak: "Click to speak",
@@ -45,7 +45,6 @@ export const translations = {
   },
   "hi-IN": {
     appTitle: "एक्वा-सीसी सहायक",
-    welcomeMessage: "नमस्ते! मैं AQUAH-CC सहायक हूँ। आज आपके खेतों की स्थिति कैसी है?",
     placeholder: "मुझे इस मौसम में कौन सी फसल उगानी चाहिए?",
     listening: "सुन रहा हूँ...",
     clickToSpeak: "बोलने के लिए क्लिक करें",
@@ -67,6 +66,7 @@ export const translations = {
     profileSaved: "फार्म प्रोफ़ाइल सफलतापूर्वक सहेजी गई!",
     profileError: "प्रोफ़ाइल सहेजने में त्रुटि।",
     serverUnreachable: "सर्वर अनुपलब्ध।",
+
     // Kashmir Soil Types
     "Karewa Soil": "करीवा मिट्टी (कश्मीर झील)",
     "Alluvial Soil": "जलोढ़ मिट्टी (घाटी)",
@@ -89,7 +89,6 @@ export const translations = {
   "ks-IN": {
     // UI Elements
     appTitle: "AQUAH اسسٹنٹ",
-    welcomeMessage: "آداب! مٔ AQUAH-CC اسسٹنٹ چھُس۔ آج وُچھِو کیاہ چھٕ کھیتن ہُنٛد حال؟",
     placeholder: "یَتھ موسمس مَنٛز کُس فصل واوُن چھُ بہِتَر؟",
     listening: "بوزان...",
     clickToSpeak: "کَتھ کرنہِ خٲطرٕ کلِک کرِو",
@@ -129,48 +128,5 @@ export const translations = {
     "Maize": "مَکٲے (Maize)",
     "Soybean": "سویابین (Soybean)",
     "Wheat": "کݨک (Wheat)"
-  },
-  "ur-IN": {
-    appTitle: "AQUAH اسسٹنٹ",
-    welcomeMessage: "السلام علیکم! میں AQUAH-CC اسسٹنٹ ہوں۔ آج آپ کے کھیتوں کی کیا صورتحال ہے؟",
-    placeholder: "اس موسم میں کون سی فصل بوئیں؟",
-    listening: "سن رہا ہوں...",
-    clickToSpeak: "بولنے کے لیے کلک کریں",
-    floodRiskLabel: "سیلاب کا خطرہ",
-    topCropLabel: "بہترین فصل",
-    unknownRisk: "نامعلوم",
-    consultExpert: "زرعی ماہر سے مشورہ کریں",
-    basedOnSensors: "دریائے جہلم کے موجودہ سینسرز کی بنیاد پر۔",
-    optimalSoilMoisture: "موجودہ مٹی کی نمی کے لیے موزوں۔",
-    // Settings Labels
-    farmProfile: "فارم پروفائل",
-    configureProfile: "بہتر AI پیشگوئی کے لیے اپنا ڈیجیٹل ٹوِن ترتیب دیں۔",
-    soilTypeLabel: "مٹی کی قسم",
-    waterLevelLabel: "پانی کی دستیابی",
-    selectSoilType: "مٹی کی قسم منتخب کریں...",
-    selectWaterLevel: "پانی کی سطح منتخب کریں...",
-    saveProfile: "پروفائل محفوظ کریں",
-    saving: "محفوظ ہو رہا ہے...",
-    profileSaved: "فارم پروفائل کامیابی سے محفوظ ہو گیا!",
-    profileError: "پروفائل محفوظ کرنے میں خرابی۔",
-    serverUnreachable: "سرور دستیاب نہیں۔",
-    // Kashmir Soil Types
-    "Karewa Soil": "کریوا مٹی (کشمیری جھیل)",
-    "Alluvial Soil": "جلوڑ مٹی (وادی)",
-    "Loamy Soil": "دوآب مٹی (مثالی)",
-    "Sandy Loam": "ریتیلی دوآب (اچھی نکاسی)",
-    "Clay Loam": "چکنی دوآب (پانی ذخیرہ)",
-    "Glacial Soil": "برفانی مٹی (بلند علاقہ)",
-    "Peaty Soil": "پیٹی مٹی (دلدل)",
-    // API Data Translations
-    "HIGH": "زیادہ",
-    "MODERATE": "اعتدال",
-    "LOW": "کم",
-    "UNKNOWN": "نامعلوم",
-    "Fodder": "چارہ",
-    "Rice": "چاول",
-    "Maize": "مکئی",
-    "Soybean": "سویابین",
-    "Wheat": "گندم"
   }
 };
