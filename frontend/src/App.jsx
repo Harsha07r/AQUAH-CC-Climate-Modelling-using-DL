@@ -4,6 +4,7 @@ import { auth, onAuthStateChanged, signOut } from './firebase';
 import Layout from './components/Layout';
 import ChatInterface from './components/ChatInterface';
 import Login from './components/Login';
+import LandingPage from './pages/LandingPage';
 import Settings from './components/Settings';
 import HydrologyPage from './components/HydrologyPage';
 import CropsPage from './components/CropsPage';
@@ -14,7 +15,8 @@ function App() {
 
   // <-- 2. The Smart UX Toggle: Tracks what the user is currently looking at
   const [currentView, setCurrentView] = useState('chat');
-  const [currentLanguage, setCurrentLanguage] = useState('en-IN'); 
+  const [currentLanguage, setCurrentLanguage] = useState('en-IN');
+  const [showLogin, setShowLogin] = useState(false);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (authUser) => {
@@ -50,7 +52,8 @@ function App() {
   }
 
   if (!user) {
-    return <Login onLoginSuccess={() => setUser(true)} />;
+    if (showLogin) return <Login onLoginSuccess={() => setUser(true)} />;
+    return <LandingPage onGetStarted={() => setShowLogin(true)} />;
   }
 
   return (
